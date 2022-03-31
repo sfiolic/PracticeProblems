@@ -6,9 +6,9 @@
 
 
 def isPali(input_string):
-    if input_string.isalpha():
-        return input_string == input_string[::-1]
-    return false
+    if type(input_string) == str:
+        return input_string.lower() == input_string.lower()[::-1]
+    return False
 
 
 def test_pali_1():
