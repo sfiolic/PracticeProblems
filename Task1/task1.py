@@ -11,7 +11,7 @@ def isPali(input_string):
     return false
 
 
-def test_Pali_1():
+def test_pali_1():
     return isPali(324324)
 
 def test_pali_2():
@@ -22,9 +22,9 @@ def test_pali_3():
 
 
 def main():
-    print("test 1, not a string, should be false:  ",test_Pali_1())
-    print("test 2, text not pali, should be false: ",test_Pali_2())
-    print("test 3, text is pali, should be false:  ",test_Pali_3())
+    print("test 1, not a string, should be False:  ",test_pali_1())
+    print("test 2, text not pali, should be False: ",test_pali_2())
+    print("test 3, text is pali, should be True:  ",test_pali_3())
 
 if __name__ == '__main__':
     main()
