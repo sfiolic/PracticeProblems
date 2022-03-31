@@ -46,11 +46,16 @@ def test_allpali_5():
 # MAIN
 #################################################################
 def main():
-    print("test 1, not a string, should be False:  ",test_pali_1())
-    print("test 2, text not pali, should be False: ",test_pali_2())
-    print("test 3, text is pali, should be True:   ",test_pali_3())
-    print("test 4, list equals, should be True:    ",test_allpali_4())
-    print("test 5, list equals, should be True:    ",test_allpali_5())
+    print("test 1, not a string, should be False:  ",
+            "Pass" if not test_pali_1() else "Fail")
+    print("test 2, text not pali, should be False: ",
+            "Pass" if not test_pali_2() else "Fail")
+    print("test 3, text is pali, should be True:   ",
+            "Pass" if test_pali_3() else "Fail")
+    print("test 4, list equals, should be True:    ",
+            "Pass" if test_allpali_4() else "Fail")
+    print("test 5, list equals, should be True:    ",
+            "Pass" if test_allpali_5() else "Fail")
 
 if __name__ == '__main__':
     main()
