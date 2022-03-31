@@ -50,10 +50,10 @@ def test_allpali_4():
 
 def test_allpali_5():
     expected = [ [ 5, 8, 'ana' ] ]
-    return allPalis("anavolimilovana") == expected
+    return allPalis("wertyanapoijk") == expected
 
 def test_allpali_6():
-    expected = [ [] ]
+    expected = [ ]
     return allPalis("") == expected
 
 
