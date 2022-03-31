@@ -1,5 +1,14 @@
+#Steve Fiolic
+#3/31/22
+#Assumptions: The only valid input of the to the isPali function are
+#               alphabetic letters. I will treat mix cases the same by
+#               checking on the lower case letters only.
+
+
 def isPali(input_string):
-    return 0
+    if input_string.isalpha():
+        return input_string == input_string[::-1]
+    return false
 
 
 def test_Pali_1():
