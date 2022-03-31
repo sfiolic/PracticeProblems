@@ -20,10 +20,10 @@ def isPali(input_string):
 #               that all the inputs into allPalis are valid strings.
 def allPalis(input_string):
     res = []
-    # if input is empty then append empty list
-    if not input_string:
-        res.append([])
-
+    for begining_index in range(len(input_string)):
+        for ending_index in range(begining_index+1, len(input_string)):
+            if len(input_string[begining_index:ending_index]) > 1 and isPali(input_string[begining_index:ending_index]):
+                res.append([begining_index,ending_index,input_string[begining_index:ending_index]])
     return res
 
 #################################################################
