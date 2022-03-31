@@ -1,17 +1,21 @@
 #Steve Fiolic
 #3/31/22
-#Assumptions: The only valid input of the to the isPali function are
-#               alphabetic letters. I will treat mix cases the same by
-#               checking on the lower case letters only.
+
 
 #################################################################
 # Functions
 #################################################################
+#Assumptions: The only valid input of the to the isPali function are
+#               alphabetic letters. I will treat mix cases the same by
+#               checking on the lower case letters only.
 def isPali(input_string):
     if type(input_string) == str:
         return input_string.lower() == input_string.lower()[::-1]
     return False
 
+#Assumptions: The string check happens in the inner functions. It would
+#               it would make more sense to have it in allPalis. I am assuming
+#               that all the inputs into allPalis are valid strings. 
 def allPalis(input_string):
     return 0
 
