@@ -1,11 +1,12 @@
 import React, { Fragment } from "react";
 
-import { Hero} from "../components";
+import { ContactFormComponent} from "../components";
 
 const Home = () => (
   <Fragment>
-    <Hero />
-    <hr />
+
+
+    <div> Go to Profile</div>
 
   </Fragment>
 );
