@@ -1,28 +1,29 @@
 import logo from './logo.svg';
 import './App.css';
-
+import {NavBar, Footer} from "./components";
 import Auth0ProviderWithHistory from "./auth0Provider"
+import { Home, Profile} from "./views";
+import { Route, Switch } from "react-router-dom";
+
+
 function App() {
   return (
     <Auth0ProviderWithHistory>
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
+    <div id="app" className="d-flex flex-column h-100">
+      <NavBar />
+      <div className="container flex-grow-1">
+        <div className="mt-5">
+          <Switch>
+            <Route path="/" exact component={Home} />
+            <Route path="/profile" component={Profile} />
+
+          </Switch>
+        </div>
       </div>
+      <Footer />
+    </div>
     </Auth0ProviderWithHistory>
   );
-}
+};
 
 export default App;
