@@ -1,7 +1,9 @@
 import {NavLink} from "react-router-dom";
 import React from "react";
+import {useAuth0} from "@auth0/auth0-react";
 
 const MainNav = () => {
+  const {loginWithRedirect,logout, user, isLoading} = useAuth0();
 return (
   <div className="navbar-nav mr-auto">
     <NavLink
@@ -20,6 +22,21 @@ return (
     >
       Profile
     </NavLink>
+    {!isLoading && !user && (
+      <button
+        className="btn btn-primary btn-block"
+        onClick={() => loginWithRedirect()}
+        >
+        Log In {user}
+        </button>
+    )}
+    {!isLoading && user && (
+      <button
+        className="btn btn-primary btn-block"
+        onClick={() => logout()}
+        >
+        Log Out
+        </button>
     )}
 
   </div>
