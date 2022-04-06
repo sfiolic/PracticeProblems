@@ -8,7 +8,7 @@ type Mutation {
   signup(email: String!, password: String!, firstname: String!): AuthPayload
   login(email: String!, password: String!): AuthPayload
   edit(email: String!, password: String!, firstname: String!, lastname: String!, address: String!): AuthPayload
-  info(email: String!, password: String!): AuthPayload
+  information(email: String!, password: String!): AuthPayload
 }
 
 type Link {

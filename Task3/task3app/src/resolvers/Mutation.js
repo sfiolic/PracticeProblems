@@ -41,6 +41,25 @@ async function login(parent, args, context, info) {
   }
 }
 
+async function edit(parent, args, context, info) {
+  const user = await context.prisma.user.update({ where: { email: args.email },
+                                                data: {firstname: args.firstname,
+                                                lastname: args.lastname,
+                                                address: args.address}})
+
+  const valid = await bcrypt.compare(args.password, user.password)
+  if (!valid) {
+    throw new Error('Invalid password')
+  }
+  const token = jwt.sign({ userId: user.id }, APP_SECRET)
+
+  // 3
+  return {
+    token,
+    user,
+  }
+}
+
 async function post(parent, args, context, info) {
   const { userId } = context;
 
